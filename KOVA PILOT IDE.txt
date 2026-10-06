@@ -1,0 +1,1281 @@
+KOVA PILOT IDE
+
+Technical Sheet — Human + AI Software Engineering Environment
+
+Project: KOVA Pilot
+Product: KOVA Pilot IDE
+Category: Human + AI Software Engineering Environment
+Primary Purpose: Software development, engineering, execution, verification, and maintenance
+Primary Language: Python
+Primary AI Role: Autonomous and collaborative Software Engineering Worker
+Primary Human Role: Engineer, decision-maker, reviewer, and project authority
+
+---
+
+1. Product Definition
+
+KOVA Pilot IDE is a software engineering environment designed around the idea that Human and AI are both first-class workers operating on the same software system.
+
+KOVA Pilot is not merely:
+
+- a code editor with an AI assistant,
+- an AI chatbot embedded inside an IDE,
+- an autocomplete system,
+- a code-generation interface,
+- a terminal with an LLM attached,
+- or a generic agent platform.
+
+KOVA Pilot is an integrated engineering environment in which:
+
+Human Intent + AI Engineering + Project Knowledge + Code + Tools + Execution + Verification
+
+operate as parts of one coherent development system.
+
+The environment must allow the human and AI worker to understand, modify, execute, test, diagnose, review, and evolve the same project while maintaining persistent knowledge of the system.
+
+---
+
+2. Core Objective
+
+The fundamental objective of KOVA Pilot is:
+
+«Enable a human and an AI software engineer to collaboratively construct and maintain functioning software while preserving system-level understanding, project knowledge, engineering constraints, and verifiable change history.»
+
+The IDE must optimize for:
+
+- Correct software
+- Maintainable software
+- Understandable software
+- Verifiable software
+- Controlled change
+- Persistent engineering knowledge
+- Efficient human-AI collaboration
+- System-level reasoning
+- Reproducible development
+- Safe autonomous execution
+
+The objective is not to maximize generated code.
+
+---
+
+3. Fundamental Development Model
+
+KOVA Pilot is based on the following engineering loop:
+
+Requirement
+    ↓
+Understand
+    ↓
+Acquire Context
+    ↓
+Inspect Project
+    ↓
+Analyze System
+    ↓
+Determine Impact
+    ↓
+Plan
+    ↓
+Implement
+    ↓
+Build / Execute
+    ↓
+Test
+    ↓
+Observe
+    ↓
+Diagnose
+    ↓
+Correct
+    ↓
+Retest
+    ↓
+Review
+    ↓
+Integrate
+    ↓
+Document
+    ↓
+Working Software
+
+The AI must be capable of repeating this loop rather than stopping after generating source code.
+
+---
+
+4. Human + AI Model
+
+KOVA Pilot defines three distinct intelligence layers.
+
+4.1 Human Intelligence
+
+The human provides:
+
+- Intent
+- Requirements
+- Product decisions
+- Architectural authority
+- Priorities
+- Domain knowledge
+- Approval
+- Judgment
+- Final responsibility
+
+The human remains capable of inspecting and controlling the work performed by the AI.
+
+---
+
+4.2 AI Intelligence
+
+The AI provides:
+
+- Requirement analysis
+- Repository analysis
+- System modeling
+- Planning
+- Code implementation
+- Tool usage
+- Execution
+- Testing
+- Debugging
+- Research
+- Refactoring
+- Documentation
+- Verification
+- Change-impact analysis
+
+The AI is treated as an engineering worker rather than a conversational assistant.
+
+---
+
+4.3 IDE Intelligence
+
+The IDE provides the environment through which both workers operate.
+
+It manages:
+
+- Project structure
+- Persistent knowledge
+- Rules
+- Context
+- Files
+- Processes
+- Execution
+- Diagnostics
+- Version control
+- Tools
+- Agent state
+- Permissions
+- Evidence
+- Work history
+- Human-AI interaction
+
+The IDE itself therefore becomes an engineering coordination layer.
+
+---
+
+5. Core Architectural Domains
+
+KOVA Pilot must be organized around distinct subsystems.
+
+KOVA Pilot
+│
+├── Workspace System
+├── Project System
+├── Knowledge System
+├── Rule System
+├── Context System
+├── Agent System
+├── Tool System
+├── Permission System
+├── Execution System
+├── Verification System
+├── Change System
+├── Version Control System
+├── Diagnostics System
+├── Human Interaction System
+├── Session System
+└── Extension System
+
+These systems must have explicit boundaries and contracts.
+
+The implementation must avoid a monolithic IDE core in which every subsystem directly depends on every other subsystem.
+
+---
+
+6. Workspace System
+
+The workspace is the primary operating environment.
+
+It must provide:
+
+- Project opening
+- Project creation
+- Project switching
+- Multiple project support
+- File navigation
+- File editing
+- Search
+- Symbol navigation
+- Integrated terminal
+- Source control
+- Agent interaction
+- Diagnostics
+- Execution controls
+- Configuration
+- Workspace state persistence
+
+The workspace must preserve enough state to allow the developer to resume work without reconstructing the previous context manually.
+
+---
+
+7. Project System
+
+KOVA Pilot must treat a project as a software system, not merely a directory containing files.
+
+The project model must understand:
+
+- Source files
+- Modules
+- Packages
+- Dependencies
+- Entry points
+- Tests
+- Configuration
+- Documentation
+- Databases
+- APIs
+- External services
+- Generated artifacts
+- Build processes
+- Runtime processes
+- Version-control state
+- Project rules
+- Project knowledge
+- Architectural boundaries
+
+The IDE must be able to construct a structural representation of the project.
+
+---
+
+8. Persistent Project Knowledge
+
+KOVA Pilot must support persistent Markdown-based engineering knowledge.
+
+Recommended core files include:
+
+PROJECT.md
+PROJECT_RULES.md
+AGENT.md
+ARCHITECTURE.md
+REQUIREMENTS.md
+CHANGELOG.md
+
+Additional files may describe:
+
+API specifications
+Database architecture
+Domain models
+Development procedures
+Testing strategy
+Deployment procedures
+Design decisions
+Operational procedures
+Coding standards
+
+These documents are persistent project knowledge.
+
+They must remain available independently from the conversational history of an AI session.
+
+---
+
+9. Knowledge Hierarchy
+
+KOVA Pilot must distinguish between different sources of authority.
+
+IDE Rules
+    ↓
+Project Rules
+    ↓
+Project Architecture
+    ↓
+Project Requirements
+    ↓
+Project Documentation
+    ↓
+Source Code
+    ↓
+Runtime Evidence
+
+This hierarchy does not mean that source code is automatically subordinate to documentation.
+
+Instead, conflicts must be detected.
+
+For example:
+
+PROJECT.md says X
+Source code implements Y
+
+This represents a potential inconsistency that should be surfaced rather than silently ignored.
+
+---
+
+10. Rule System
+
+KOVA Pilot has its own rules independent of individual projects.
+
+IDE Rules
+
+IDE rules govern how KOVA Pilot operates.
+
+Examples:
+
+- AI permissions
+- Execution safety
+- Context handling
+- Confirmation requirements
+- Tool usage
+- File access
+- Autonomous operation
+- Workspace behavior
+- Verification requirements
+
+Project Rules
+
+Project rules govern the software being developed.
+
+Examples:
+
+- Architecture
+- Coding conventions
+- Dependencies
+- Testing requirements
+- Naming conventions
+- Deployment requirements
+- Security requirements
+- Domain-specific constraints
+
+The two rule systems must remain separate.
+
+---
+
+11. AGENT.md
+
+"AGENT.md" defines the behavioral contract of the AI worker for a project.
+
+It may contain:
+
+- Agent responsibilities
+- Development workflow
+- Coding standards
+- Tool-use rules
+- Project-specific procedures
+- Prohibited actions
+- Documentation requirements
+- Testing requirements
+- Architectural constraints
+
+The AI must consult applicable agent instructions before performing significant project work.
+
+---
+
+12. Context System
+
+Context is one of KOVA Pilot's most important subsystems.
+
+The AI must not depend exclusively on the current conversation.
+
+The Context System must be capable of acquiring relevant information from:
+
+- Current files
+- Related files
+- Project documentation
+- Architecture documentation
+- Requirements
+- Agent rules
+- Git history
+- Existing changes
+- Dependencies
+- Tests
+- Error output
+- Runtime evidence
+- Tool results
+- Previous session artifacts
+
+The system must prioritize relevant context over maximum context volume.
+
+---
+
+13. Context Relationship Awareness
+
+KOVA Pilot must encourage relational reasoning.
+
+When a component changes, the AI must be able to ask:
+
+What depends on this?
+
+What does this depend on?
+
+Who calls this?
+
+What calls those callers?
+
+Which data does this modify?
+
+Which state does it affect?
+
+Which interfaces expose it?
+
+Which tests verify it?
+
+Which configuration affects it?
+
+Which documentation describes it?
+
+What breaks if it changes?
+
+What must be updated together?
+
+The IDE must therefore expose relationships rather than treating files as isolated text documents.
+
+---
+
+14. System Model
+
+KOVA Pilot should maintain a machine-readable representation of relevant project relationships.
+
+The model may represent:
+
+Files
+Modules
+Functions
+Classes
+Symbols
+Imports
+Dependencies
+Calls
+Data flows
+Control flows
+Interfaces
+APIs
+Events
+Database entities
+Tests
+Configuration
+Processes
+External services
+
+The objective is not merely indexing.
+
+The objective is enabling engineering reasoning over the project structure.
+
+---
+
+15. Agent System
+
+KOVA Pilot must support one or more AI workers.
+
+A worker must have:
+
+- Identity
+- Instructions
+- Model
+- Context
+- Tools
+- Permissions
+- Current task
+- Working state
+- Execution state
+- Artifacts
+- Results
+- Verification state
+
+The initial implementation may use a single primary agent.
+
+The architecture must not prevent future specialized agents.
+
+---
+
+16. AI Worker Lifecycle
+
+An AI task follows:
+
+Task Received
+      ↓
+Requirement Analysis
+      ↓
+Context Acquisition
+      ↓
+Project Inspection
+      ↓
+Impact Analysis
+      ↓
+Plan
+      ↓
+Human Approval if Required
+      ↓
+Implementation
+      ↓
+Execution
+      ↓
+Testing
+      ↓
+Diagnosis
+      ↓
+Correction
+      ↓
+Verification
+      ↓
+Result
+
+The AI must not interpret “task completed” as “code generated.”
+
+A task is complete when its intended behavior has been appropriately verified.
+
+---
+
+17. Tool System
+
+Tools are capabilities available to the AI worker.
+
+Core tool categories include:
+
+- File operations
+- Repository search
+- Symbol search
+- Terminal execution
+- Build execution
+- Test execution
+- Debugging
+- Git
+- Web research
+- Documentation retrieval
+- HTTP/API interaction
+- Database interaction
+- Browser automation
+- Project inspection
+
+Tools must expose explicit contracts.
+
+The AI must know:
+
+- What the tool does
+- What inputs it accepts
+- What permissions it requires
+- What side effects it can produce
+- What evidence it returns
+
+---
+
+18. Permission System
+
+AI autonomy must be controlled through explicit permissions.
+
+Potential permission classes:
+
+Read
+Write
+Delete
+Execute
+Network
+Git
+Database
+External Services
+Package Installation
+System Configuration
+Deployment
+
+Permissions may be:
+
+- Allowed
+- Denied
+- Confirmation required
+
+The permission system must be configurable by the human.
+
+---
+
+19. Execution System
+
+Execution is a first-class IDE capability.
+
+KOVA Pilot must be able to manage:
+
+- Python processes
+- Tests
+- Build commands
+- Development servers
+- Scripts
+- Background processes
+- Debug sessions
+- Environment variables
+- Working directories
+- Exit codes
+- stdout
+- stderr
+- Process lifecycle
+
+The AI must receive execution results as structured evidence whenever possible.
+
+---
+
+20. Verification System
+
+Verification must be independent from code generation.
+
+KOVA Pilot must support:
+
+- Test execution
+- Static analysis
+- Type checking
+- Linting
+- Build verification
+- Runtime verification
+- API verification
+- Database verification
+- Regression verification
+- Security checks
+- Performance checks where appropriate
+
+Verification results must become part of the task's evidence.
+
+---
+
+21. Evidence Model
+
+KOVA Pilot should distinguish:
+
+Assumption
+Hypothesis
+Prediction
+Observation
+Execution Result
+Test Result
+Diagnostic Evidence
+Verified Fact
+
+The AI must not treat an assumption as equivalent to runtime evidence.
+
+Example:
+
+«“This should fix the problem.”»
+
+is not equivalent to:
+
+«“The failing test now passes.”»
+
+---
+
+22. Diagnostics System
+
+The IDE must unify diagnostics from:
+
+- Compiler/interpreter
+- Runtime
+- Tests
+- Linter
+- Type checker
+- Debugger
+- APIs
+- Database
+- Build system
+- Git
+- External services
+
+Diagnostics should preserve:
+
+- Source
+- Timestamp
+- Severity
+- Location
+- Process
+- Error
+- Stack trace
+- Related operation
+- Relevant context
+
+---
+
+23. Debugging Workflow
+
+KOVA Pilot should support:
+
+Failure
+ ↓
+Observe
+ ↓
+Reproduce
+ ↓
+Localize
+ ↓
+Trace
+ ↓
+Determine Cause
+ ↓
+Correct
+ ↓
+Retest
+ ↓
+Regression Check
+
+The AI must be encouraged to diagnose before modifying unrelated code.
+
+---
+
+24. Change System
+
+Every significant AI modification must be represented as a coherent change.
+
+A change should contain:
+
+- Intent
+- Files affected
+- Reason
+- Planned modifications
+- Actual modifications
+- Verification performed
+- Result
+- Remaining issues
+
+The system should make it possible for the human to understand what changed and why.
+
+---
+
+25. Human Review
+
+The human must be able to inspect AI work before accepting it.
+
+Review capabilities should include:
+
+- Diff view
+- File changes
+- Explanation
+- Related files
+- Tests executed
+- Test results
+- Diagnostics
+- AI reasoning artifacts
+- Verification status
+- Approval/rejection
+
+The human should be able to:
+
+Accept
+Reject
+Modify
+Request Revision
+Continue
+Rollback
+
+---
+
+26. Version Control
+
+Git must be treated as an engineering subsystem.
+
+KOVA Pilot should expose:
+
+- Status
+- Diff
+- History
+- Branches
+- Commits
+- Staging
+- Merge
+- Rebase
+- Revert
+- Tags
+- Blame
+- Bisect
+- Remote synchronization
+
+AI operations must remain compatible with normal human Git workflows.
+
+The IDE must prevent accidental destruction of valuable work whenever practical.
+
+---
+
+27. Session System
+
+A session represents an active engineering task.
+
+A session should preserve:
+
+- User request
+- AI plan
+- Context acquired
+- Files changed
+- Commands executed
+- Tests executed
+- Errors encountered
+- Corrections
+- Final result
+- Outstanding issues
+
+Sessions should be resumable.
+
+The goal is to prevent:
+
+«“The AI forgot what it was doing.”»
+
+---
+
+28. AI Artifacts
+
+KOVA Pilot should allow the AI to produce structured engineering artifacts such as:
+
+- Plans
+- Architecture analyses
+- Change plans
+- Dependency analyses
+- Test plans
+- Debugging reports
+- Review reports
+- Research notes
+- Implementation summaries
+- Decision proposals
+
+Artifacts should be inspectable independently from the chat interface.
+
+---
+
+29. Human-AI Communication
+
+The AI interface should support more than conversational messages.
+
+It should allow the AI to present:
+
+- Plans
+- Diffs
+- File references
+- Diagnostics
+- Test results
+- Architecture diagrams
+- Dependency relationships
+- Execution output
+- Verification status
+- Proposed changes
+- Questions requiring human decisions
+
+The conversation is therefore an engineering control surface, not the entire IDE.
+
+---
+
+30. Editor Environment
+
+The code editor must provide the expected capabilities of a modern professional IDE:
+
+- Syntax highlighting
+- Code completion
+- Go to definition
+- Go to declaration
+- Find references
+- Rename
+- Diagnostics
+- Formatting
+- Refactoring
+- Multi-file editing
+- Search and replace
+- Multiple tabs
+- Split views
+- Integrated terminal
+- Debugging
+- Source control
+
+These capabilities are foundational infrastructure rather than the defining feature of KOVA Pilot.
+
+---
+
+31. AI-Native Editor Interaction
+
+AI operations should be integrated directly into the development environment.
+
+Examples:
+
+Explain this function
+Trace this data flow
+Find affected components
+Implement this requirement
+Generate tests
+Run tests
+Diagnose this failure
+Refactor this module
+Review this change
+Explain this architecture
+Find dependency relationships
+
+The AI should be able to operate on selected code, files, modules, or the entire project.
+
+---
+
+32. Architecture Intelligence
+
+KOVA Pilot must provide mechanisms for understanding architecture.
+
+The system should identify:
+
+- Module boundaries
+- Dependency direction
+- Circular dependencies
+- High-coupling areas
+- Entry points
+- External boundaries
+- Data ownership
+- Event relationships
+- API relationships
+- Test relationships
+
+The objective is to make architecture observable to both human and AI.
+
+---
+
+33. Project Health
+
+KOVA Pilot should eventually provide a project-health layer.
+
+Potential dimensions:
+
+Architecture
+Dependencies
+Testing
+Security
+Code Quality
+Documentation
+Configuration
+Build
+Runtime
+Performance
+Git State
+Technical Debt
+
+The system should identify problems without turning the IDE into a generic dashboard.
+
+---
+
+34. Web and External Knowledge
+
+KOVA Pilot should allow the AI to research external technical information when required.
+
+Research should support:
+
+- Official documentation
+- API documentation
+- Package documentation
+- Standards
+- Technical references
+- Version-specific information
+- Error investigation
+
+External information must remain distinguishable from project-local knowledge.
+
+The AI must not silently treat external information as project authority.
+
+---
+
+35. Model Independence
+
+KOVA Pilot must not be architecturally dependent on one AI provider.
+
+The AI layer should support interchangeable models/providers.
+
+The IDE's engineering systems must remain functional independently of the selected model.
+
+This ensures:
+
+- Model replacement
+- Provider independence
+- Cost control
+- Local/cloud model flexibility
+- Future model integration
+- Long-term project viability
+
+---
+
+36. Event-Driven Internal Architecture
+
+KOVA Pilot itself should use a structured event-driven architecture where appropriate.
+
+Examples of internal events:
+
+ProjectOpened
+FileChanged
+FileSaved
+TaskStarted
+TaskPlanned
+ToolInvoked
+CommandExecuted
+ProcessStarted
+ProcessExited
+TestStarted
+TestCompleted
+DiagnosticCreated
+AgentStateChanged
+ChangeCreated
+ReviewRequested
+ChangeApproved
+ChangeRejected
+SessionPaused
+SessionResumed
+
+Components should communicate through explicit contracts rather than arbitrary direct dependencies.
+
+---
+
+37. Separation of Concerns
+
+The IDE must maintain clear boundaries between:
+
+UI
+Workspace
+Project Model
+Knowledge
+Rules
+Agent
+Tools
+Execution
+Diagnostics
+Verification
+Version Control
+Persistence
+Extensions
+
+The UI must not contain the core intelligence of the IDE.
+
+The AI must not directly control every internal subsystem.
+
+The execution system must not depend on UI implementation details.
+
+The project model must remain usable independently of the visual interface.
+
+---
+
+38. Extension Architecture
+
+KOVA Pilot must eventually support extensions.
+
+Extensions may provide:
+
+- Languages
+- Framework integrations
+- Tools
+- AI providers
+- Debuggers
+- Database integrations
+- API integrations
+- Project analyzers
+- UI components
+- Commands
+
+Extensions must interact through explicit APIs.
+
+The core IDE must remain stable when extensions are added or removed.
+
+---
+
+39. Primary Python Support
+
+Python is the initial primary language.
+
+Native Python support should eventually include:
+
+- Python interpreter discovery
+- Virtual environments
+- Package environments
+- Dependency management
+- Type checking
+- Linting
+- Formatting
+- Testing
+- Debugging
+- Python execution
+- Async support
+- Package/project structure
+- Import analysis
+
+The architecture must not prevent future support for additional languages.
+
+---
+
+40. Security Model
+
+Security must apply to both the IDE and AI worker.
+
+KOVA Pilot must protect:
+
+- Source code
+- Credentials
+- Environment variables
+- API keys
+- Databases
+- External services
+- Local files
+- Git repositories
+- Network access
+
+AI-generated commands must be treated as potentially consequential operations.
+
+Secrets must not be unnecessarily exposed to model context, logs, diagnostics, or generated artifacts.
+
+---
+
+41. Resource Awareness
+
+KOVA Pilot must operate efficiently on ordinary development hardware.
+
+The architecture should minimize:
+
+- Unnecessary memory consumption
+- Background processes
+- Redundant indexing
+- Duplicate context
+- Excessive local model requirements
+- Heavy infrastructure dependencies
+
+Cloud AI models may be used.
+
+Local execution should remain practical where required.
+
+---
+
+42. Persistence
+
+KOVA Pilot must persist important engineering state.
+
+Persistent information may include:
+
+Workspace State
+Project Metadata
+Project Knowledge
+Rules
+Agent Configuration
+Sessions
+Artifacts
+Tool Configuration
+User Preferences
+Indexes
+Architecture Information
+Task History
+
+Persistence must be structured rather than relying exclusively on conversation history.
+
+---
+
+43. Failure Philosophy
+
+KOVA Pilot must assume that:
+
+- AI can be wrong.
+- Code can be wrong.
+- Tools can fail.
+- External services can fail.
+- Tests can be incomplete.
+- Documentation can become stale.
+- Dependencies can change.
+- Runtime behavior can differ from expectations.
+
+The environment must therefore favor:
+
+Evidence → Diagnosis → Correction → Verification
+
+over:
+
+Confidence → Assumption → Completion
+
+---
+
+44. Definition of Done
+
+A software task should not be considered complete merely because:
+
+- Code was generated.
+- Files were modified.
+- The AI claims success.
+- No obvious syntax error exists.
+
+Completion requires appropriate evidence that:
+
+1. The requirement was understood.
+2. The implementation addresses the requirement.
+3. Relevant project constraints were respected.
+4. Relevant dependencies were considered.
+5. The software executes where applicable.
+6. Appropriate tests were performed.
+7. Failures were resolved.
+8. Regression risks were considered.
+9. The final change is coherent.
+10. Required documentation or project knowledge was updated.
+
+---
+
+45. Fundamental KOVA Pilot Principle
+
+KOVA Pilot must operate according to one central principle:
+
+«Software is a system of relationships, not a collection of independent files.»
+
+Therefore, the IDE must help both human and AI understand:
+
+Code
+    ↕
+Data
+    ↕
+State
+    ↕
+Dependencies
+    ↕
+Interfaces
+    ↕
+Architecture
+    ↕
+Execution
+    ↕
+Tests
+    ↕
+Runtime Behavior
+    ↕
+External Systems
+
+A change to one element may affect many others.
+
+KOVA Pilot exists to make those relationships understandable, controllable, and verifiable.
+
+---
+
+46. Final Product Definition
+
+KOVA Pilot IDE is a Human + AI Software Engineering Environment designed to transform software development from:
+
+Human writes code
+        +
+AI generates code
+
+into:
+
+Human defines intent
+        ↓
+KOVA understands the project
+        ↓
+AI analyzes the system
+        ↓
+AI plans the change
+        ↓
+Human/AI collaborate
+        ↓
+AI implements
+        ↓
+KOVA executes
+        ↓
+KOVA verifies
+        ↓
+AI diagnoses failures
+        ↓
+AI corrects
+        ↓
+KOVA records evidence
+        ↓
+Human reviews
+        ↓
+The project evolves
+
+The defining characteristic of KOVA Pilot is therefore not its editor, its AI model, or its collection of tools.
+
+Its defining characteristic is the engineering environment that allows Human and AI intelligence to operate together on persistent software systems with shared knowledge, controlled authority, executable tools, and verifiable results.
